@@ -107,7 +107,37 @@ function say_hi3m() {
 document.getElementById('say3').addEventListener('click', say_hi3m);
 </script>
 </p>
+<!-- ################################################## --> 
+<p>
+<b><u>Exercise 18.71</u></b>
 
+<br>
+Consider the following reaction: <br>
+CH3OH(g)⇌CO(g)+2H2(g)<br>
+Calculate ΔG for this reaction at <input id="T"> ∘C under the following conditions:<br>
+PCH3OH= <input id="pch"> atm<br> 
+PCO= <input id="pco"> atm <br>
+PH2= <input id="ph2"> atm<br>
+
+<button id="say4">solve!</button> 
+ <echo id="result4">
+
+<script>
+function say_hi4m() {
+    var pch = document.getElementById('pch').value;
+    var pco = document.getElementById('pco').value;
+ 	var ph2 = document.getElementById('ph2').value;
+    var T = document.getElementById('T').value;
+    var q = ((Math.pow(ph2,2)*(pco))/(pch));
+    var T = ((273*1)+(T*1));
+    var html4 = 'ΔG= '+(1*25.1+(8.314*T*Math.log(q)/1000))+' kJ';
+    
+    document.getElementById('result4').innerHTML = html4;
+}
+ 
+document.getElementById('say4').addEventListener('click', say_hi4m);
+</script>
+</p>
 
 
 
