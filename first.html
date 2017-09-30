@@ -6,11 +6,13 @@ h1 {
 color: #09BA9E;
 }
 body {
-    background-color: #181436;
+    background-color: #2C3136;
 }
 p { 
 	margin: 25px 35px;
 	background-color: #09BA9E;
+    outline: #3B81A7 solid thick;
+    font-family: Georgia, serif;
 }
 </style>
 </head>
@@ -45,14 +47,16 @@ function say_hi() {
 document.getElementById('say').addEventListener('click', say_hi);
 </script>
 </p>
-
-
+<!-- ################################################## --> 
 <p>
-<b><u>Exercise 18.41</u></b>
+<b><u>Exercise 18.45</u></b>
 
 <br>
-Given the values of ΔH∘rxn, ΔS∘rxn, and T below, determine ΔSuniv <br>
-ΔH∘rxn= <input id="hrxn1"> kJ ,
+Calculate the free energy change for the following reaction at <input id="temp1"> ∘C.
+<br>
+C3H8(g)+5O2(g)→3CO2(g)+4H2O(g) 
+<br>
+ΔH∘rxn= <input id="hrxn1"> kJ; ΔS∘rxn= <input id="srxn1"> J/K.  
 <br>
 
 <button id="say1">solve!</button> 
@@ -61,8 +65,13 @@ Given the values of ΔH∘rxn, ΔS∘rxn, and T below, determine ΔSuniv <br>
 <script>
 function say_hi2m() {
     var hrx1 = document.getElementById('hrxn1').value;
-    var html = hrx1*2
-    document.getElementById('result2').innerHTML = html;
+    var srx1 = document.getElementById('srxn1').value;
+    var tamp1 = (document.getElementById('temp1').value);
+  
+    
+    var html1 = 'ΔH∘= '+(((hrx1*1000)-(((tamp1*1)+(273))*srx1))/1000)+' kJ/K';
+    
+    document.getElementById('result2').innerHTML = html1;
 }
  
 document.getElementById('say1').addEventListener('click', say_hi2m);
