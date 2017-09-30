@@ -6,7 +6,7 @@ body {
     background-color: #181436;
 }
 p { 
-	background-color: #E8600C;
+	background-color: #09BA9E;
 }
 </style>
 </head>
@@ -20,10 +20,10 @@ Given the values of ΔH∘rxn, ΔS∘rxn, and T below, determine ΔSuniv.<br>
 ΔS∘rxn= <input id="srxn"> J/K ,
 T= <input id="temp"> K .
 <br>
+
 <button id="say">solve!</button> 
-<hr>
-<div id="result"></div>
- 
+ <echo id="result">
+<hr> 
 <script>
 function say_hi() {
     var hrxn = document.getElementById('hrxn').value;
@@ -32,7 +32,7 @@ function say_hi() {
 
     var temp = document.getElementById('temp').value;
     
-    var html = 'ΔSuniv= <b>' + (((srxn/1000)-(hrxn/temp))*1000);
+    var html = 'ΔSuniv= <b>' + (((srxn/1000)-(hrxn/temp))*1000)+'  J/K</b>';
  
     document.getElementById('result').innerHTML = html;
 }
