@@ -1,15 +1,20 @@
 <html>
 <head>
-  <title>Hello World</title>
+  <title>Chem 200</title>
   <style>
+h1 {
+color: #09BA9E;
+}
 body {
     background-color: #181436;
 }
 p { 
+	margin: 25px 35px;
 	background-color: #09BA9E;
 }
 </style>
 </head>
+<h1 style="font-size:45px"><center>Kishan's Kem Tool</center></h1>
 <body>
 <p>
 <b><u>Exercise 18.41</u></b>
@@ -23,7 +28,7 @@ T= <input id="temp"> K .
 
 <button id="say">solve!</button> 
  <echo id="result">
-<hr> 
+
 <script>
 function say_hi() {
     var hrxn = document.getElementById('hrxn').value;
@@ -38,6 +43,29 @@ function say_hi() {
 }
  
 document.getElementById('say').addEventListener('click', say_hi);
+</script>
+</p>
+
+
+<p>
+<b><u>Exercise 18.41</u></b>
+
+<br>
+Given the values of ΔH∘rxn, ΔS∘rxn, and T below, determine ΔSuniv <br>
+ΔH∘rxn= <input id="hrxn1"> kJ ,
+<br>
+
+<button id="say1">solve!</button> 
+ <echo id="result2">
+
+<script>
+function say_hi2m() {
+    var hrx1 = document.getElementById('hrxn1').value;
+    var html = hrx1*2
+    document.getElementById('result2').innerHTML = html;
+}
+ 
+document.getElementById('say1').addEventListener('click', say_hi2m);
 </script>
 </p>
 </body>
