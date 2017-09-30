@@ -36,7 +36,6 @@ function say_hi() {
     var hrxn = document.getElementById('hrxn').value;
     
     var srxn = (document.getElementById('srxn').value);
-
     var temp = document.getElementById('temp').value;
     
     var html = 'ΔSuniv= <b>' + (((srxn/1000)-(hrxn/temp))*1000)+'  J/K</b>';
@@ -77,5 +76,42 @@ function say_hi2m() {
 document.getElementById('say1').addEventListener('click', say_hi2m);
 </script>
 </p>
+
+<!-- ################################################## --> 
+<p>
+<b><u>Exercise 18.67</u></b>
+
+<br>
+Determine ΔG∘ for the following reaction:<br>
+2NO(g)+O2(g)→N2O4(g)<br>
+Use the following reactions with known ΔG∘rxn values:<br>
+N2O4(g)→2NO2(g), ΔG∘rxn = <input id="reac1"> kJ 
+NO(g)+12O2(g)→NO2(g), ΔG∘rxn = <input id="reac2"> kJ
+<br>
+
+
+
+<button id="say3">solve!</button> 
+ <echo id="result3">
+
+<script>
+function say_hi3m() {
+    var reac1 = document.getElementById('reac1').value;
+    var reac2 = document.getElementById('reac2').value;
+ 
+    var html1 = 'ΔH∘= '+((1*reac1)+(reac2*2))+' kJ/K';
+    
+    document.getElementById('result3').innerHTML = html1;
+}
+ 
+document.getElementById('say3').addEventListener('click', say_hi3m);
+</script>
+</p>
+
+
+
+
 </body>
 </html>
+
+
