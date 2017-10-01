@@ -58,9 +58,10 @@ function say_hi() {
     
     var srxn = (document.getElementById('srxn').value);
     var temp = document.getElementById('temp').value;
-    
-    var html = 'ΔSuniv= <b>' + (((srxn/1000)-(hrxn/temp))*1000)+'  J/K</b>';
- 
+    var	answer1 = (((srxn/1000)-(hrxn/temp))*1000)
+    var answer1 = answer1.toExponential(3);
+    var html = 'ΔSuniv= <b>' + answer1 +'  J/K</b>';
+ 	
     document.getElementById('result').innerHTML = html;
 }
  
@@ -87,9 +88,9 @@ function say_hi2m() {
     var hrx1 = document.getElementById('hrxn1').value;
     var srx1 = document.getElementById('srxn1').value;
     var tamp1 = (document.getElementById('temp1').value);
-  
-    
-    var html1 = 'ΔHº= '+(((hrx1*1000)-(((tamp1*1)+(273))*srx1))/1000)+' kJ/K';
+  	var answer2= (((hrx1*1000)-(((tamp1*1)+(273))*srx1))/1000);
+    var answer2 = answer2.toExponential(3);
+    var html1 = 'ΔHº= '+answer2+' kJ/K';
     
     document.getElementById('result2').innerHTML = html1;
 }
@@ -119,8 +120,9 @@ NO(g)+12O2(g)→NO2(g), ΔGºrxn = <input id="reac2"> kJ
 function say_hi3m() {
     var reac1 = document.getElementById('reac1').value;
     var reac2 = document.getElementById('reac2').value;
- 
-    var html1 = 'ΔG∘rxn= '+((1*reac1)+(reac2*2))+' kJ';
+ 	var answer3 = ((1*reac1)+(reac2*2));
+    var answer3 = answer3.toExponential(3);
+    var html1 = 'ΔG∘rxn= '+answer3+' kJ';
     
     document.getElementById('result3').innerHTML = html1;
 }
@@ -151,7 +153,9 @@ function say_hi4m() {
     var T = document.getElementById('T').value;
     var q = ((Math.pow(ph2,2)*(pco))/(pch));
     var T = ((273*1)+(T*1));
-    var html4 = 'ΔG= '+(1*25.1+(8.314*T*Math.log(q)/1000))+' kJ';
+    var answer4 = (1*25.1+(8.314*T*Math.log(q)/1000));
+    var answer4 = answer4.toExponential(3);
+    var html4 = 'ΔG= '+answer4+' kJ';
     
     document.getElementById('result4').innerHTML = html4;
 }
@@ -183,9 +187,10 @@ function say_hi5m() {
     var dH = dH*1000;
     var rightside = ((dH/8.314)*((1/tempeture)-(1/tempeture2)));
     var seperate = Math.exp(rightside);
-    var html5 = 'K= '+(seperate*equi*1000);
+    var html5 = (seperate*equi*1000);
+    var html5 = html5.toExponential(3);
     
-    document.getElementById('result5').innerHTML = html5;
+    document.getElementById('result5').innerHTML = 'K= '+html5;
 }
  
 document.getElementById('say5').addEventListener('click', say_hi5m);
