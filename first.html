@@ -22,9 +22,9 @@ p {
 <b><u>Exercise 18.41</u></b>
 
 <br>
-Given the values of ΔH∘rxn, ΔS∘rxn, and T below, determine ΔSuniv.<br>
-ΔH∘rxn= <input id="hrxn"> kJ ,
-ΔS∘rxn= <input id="srxn"> J/K ,
+Given the values of ΔHºrxn, ΔSºrxn, and T below, determine ΔSuniv.<br>
+ΔHºrxn= <input id="hrxn"> kJ ,
+ΔSºrxn= <input id="srxn"> J/K ,
 T= <input id="temp"> K .
 <br>
 
@@ -51,11 +51,11 @@ document.getElementById('say').addEventListener('click', say_hi);
 <b><u>Exercise 18.45</u></b>
 
 <br>
-Calculate the free energy change for the following reaction at <input id="temp1"> ∘C.
+Calculate the free energy change for the following reaction at <input id="temp1"> ºC.
 <br>
 C3H8(g)+5O2(g)→3CO2(g)+4H2O(g) 
 <br>
-ΔH∘rxn= <input id="hrxn1"> kJ; ΔS∘rxn= <input id="srxn1"> J/K.  
+ΔHºrxn= <input id="hrxn1"> kJ; ΔSºrxn= <input id="srxn1"> J/K.  
 <br>
 
 <button id="say1">solve!</button> 
@@ -68,7 +68,7 @@ function say_hi2m() {
     var tamp1 = (document.getElementById('temp1').value);
   
     
-    var html1 = 'ΔH∘= '+(((hrx1*1000)-(((tamp1*1)+(273))*srx1))/1000)+' kJ/K';
+    var html1 = 'ΔHº= '+(((hrx1*1000)-(((tamp1*1)+(273))*srx1))/1000)+' kJ/K';
     
     document.getElementById('result2').innerHTML = html1;
 }
@@ -82,11 +82,11 @@ document.getElementById('say1').addEventListener('click', say_hi2m);
 <b><u>Exercise 18.67</u></b>
 
 <br>
-Determine ΔG∘ for the following reaction:<br>
+Determine ΔGº for the following reaction:<br>
 2NO(g)+O2(g)→N2O4(g)<br>
-Use the following reactions with known ΔG∘rxn values:<br>
-N2O4(g)→2NO2(g), ΔG∘rxn = <input id="reac1"> kJ <br>
-NO(g)+12O2(g)→NO2(g), ΔG∘rxn = <input id="reac2"> kJ
+Use the following reactions with known ΔGºrxn values:<br>
+N2O4(g)→2NO2(g), ΔGºrxn = <input id="reac1"> kJ <br>
+NO(g)+12O2(g)→NO2(g), ΔGºrxn = <input id="reac2"> kJ
 <br>
 
 
@@ -114,7 +114,7 @@ document.getElementById('say3').addEventListener('click', say_hi3m);
 <br>
 Consider the following reaction: <br>
 CH3OH(g)⇌CO(g)+2H2(g)<br>
-Calculate ΔG for this reaction at <input id="T"> ∘C under the following conditions:<br>
+Calculate ΔG for this reaction at <input id="T"> ºC under the following conditions:<br>
 PCH3OH= <input id="pch"> atm<br> 
 PCO= <input id="pco"> atm <br>
 PH2= <input id="ph2"> atm<br>
@@ -138,10 +138,67 @@ function say_hi4m() {
 document.getElementById('say4').addEventListener('click', say_hi4m);
 </script>
 </p>
+<!-- ################################################## --> 
+
+<p>
+<b><u>Exercise 18.81</u></b>
+
+<br>
+The change in enthalpy (ΔHºrxn) for a reaction is <input id="dH"> kJ/mol . The equilibrium constant for the reaction is <input id="equi">•10^3 at <input id="tempeture"> K.<br><br>
+What is the equilibrium constant for the reaction at <input id="tempeture2"> K ?<br>
 
 
 
+
+<button id="say5">solve!</button> 
+ <echo id="result5">
+
+<script>
+function say_hi5m() {
+    var dH = document.getElementById('dH').value;
+    var equi = document.getElementById('equi').value;
+ 	var tempeture = document.getElementById('tempeture').value;
+    var tempeture2 = document.getElementById('tempeture2').value;
+    var dH = dH*1000;
+    var rightside = ((dH/8.314)*((1/tempeture)-(1/tempeture2)));
+    var seperate = Math.exp(rightside);
+    var html5 = 'K= '+(seperate*equi*1000);
+    
+    document.getElementById('result5').innerHTML = html5;
+}
+ 
+document.getElementById('say5').addEventListener('click', say_hi5m);
+</script>
+</p>
+<!-- ################################################## -->
+<p>
+<b><u>Exercise 18.85</u></b>
+
+<br>
+Our atmosphere is composed primarily of nitrogen and oxygen, which coexist at 25 ºC without reacting to any significant extent. However, the two gases can react to form nitrogen monoxide according to the following reaction:<br>
+N2(g)+O2(g)⇌2NO(g).<br><br>
+Calculate ΔGº for this reaction at <input id="K1"> K. &emsp; &emsp;   <p1 id='rk1'></p1>  <br>
+Calculate Kp for this reaction at <input id="K2"> K.  &emsp; &emsp;  <p1 id='rk2'></p1>   <br>
+Estimate ΔGº at <input id="K3"> K . &emsp; &emsp; <p1 id='rk3'></p1> <br>
+
+<button id="say6">solve!</button> 
+
+<script>
+function say_hi6m() {
+    var K1 = document.getElementById('K1').value;
+    var K2 = document.getElementById('K2').value;
+ 	var K3 = document.getElementById('K3').value;
+  
+    var hk1 = 175.2;
+    var hk2 = "1.95•10^-31";
+    var hk3 = 180.748-(K3*.0239);
+    document.getElementById('rk1').innerHTML = 'ΔGº = '+ hk1+ ' kJ';
+    document.getElementById('rk2').innerHTML = ' Kp  = '+hk2;
+    document.getElementById('rk3').innerHTML = 'ΔGº = '+hk3+ ' kJ';
+}
+ 
+document.getElementById('say6').addEventListener('click', say_hi6m);
+</script>
+</p>
 </body>
 </html>
-
-
